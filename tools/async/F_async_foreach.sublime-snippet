@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[F.forEach(${1:obj}, (${2:item}, callback)=>{ 
+    console.log(${2:item});
+    callback(); 
+
+}, (err)=>{
+	${3}
+});]]></content>
+	<tabTrigger>fasync.forEach</tabTrigger>
+	<scope>source.js</scope>
+	<description>async.forEach()</description>
+</snippet>
+
+
+
+

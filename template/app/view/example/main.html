@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% if (!user) %}
+  <h2>Welcome! Please log in.</h2>
+{% else %}
+  <h2>Hello, {{user.displayName}}</h2>
+{% endif %}
+
+    <button id="login" type="button" title="Simulate login">
+      Simulate login
+    </button>
+    <button id="logout" type="button" title="Simulate logout">
+      Simulate logout
+    </button>
+    <button id="wsButton" type="button" title="Open WebSocket connection">
+      Open WebSocket connection
+    </button>
+    <button id="sendButton" type="button" title="Send message to socket">
+     Send socket
+    </button>
+    <button id="restButton" type="button" title="send noti">
+      send Rest
+    </button>
+    <pre id="messages" style="height: 300px; overflow: scroll"></pre>
+    <script>
+      const messages = document.querySelector('#messages');
+      const wsButton = document.querySelector('#wsButton');
+      const sendButton = document.querySelector('#sendButton');
+      const resrButton = document.querySelector('#restButton');
+      const logout = document.querySelector('#logout');
+      const login = document.querySelector('#login');
+
+      const showMessage = (message) => {
+        messages.textContent += `\n${message}`;
+        messages.scrollTop = messages.scrollHeight;
+      };
+
+      const handleResponse = (response) => {
+        return response.ok
+          ? response.json().then((data) => JSON.stringify(data, null, 2))
+          : Promise.reject(new Error('Unexpected response'));
+      };
+
+      login.onclick = () => {
+        fetch('/login', { method: 'POST', credentials: 'same-origin' })
+          .then(handleResponse)
+          .then(showMessage)
+          .catch((err) => showMessage(err.message));
+      };
+
+      logout.onclick = () => {
+        fetch('/logout', { method: 'DELETE', credentials: 'same-origin' })
+          .then(handleResponse)
+          .then(showMessage)
+          .catch((err) => showMessage(err.message));
+      };
+
+      let ws;
+      wsButton.onclick = () => {
+        if (ws) {
+          ws.onerror = ws.onopen = ws.onclose = null;
+          ws.close();
+        }
+
+        ws = new WebSocket(`ws://${location.host}`);
+        ws.onerror = () => showMessage('WebSocket error');
+        ws.onopen = () => showMessage('WebSocket connection established');
+        ws.onmessage = (event) => {
+          showMessage(event.data);
+        }
+        ws.onclose = () => showMessage('WebSocket connection closed');
+      };
+
+      sendButton.onclick = () => {
+        if (ws) {
+          ws.send(JSON.stringify({type:'request','data':Date.now()}));
+        }
+      };
+
+      restButton.onclick = () => {
+        fetch('/socket/noti', { method: 'POST', credentials: 'same-origin' })
+          .then(handleResponse)
+          .then(showMessage)
+          .catch((err) => showMessage(err.message));
+      };
+    </script>
+{% endblock %}

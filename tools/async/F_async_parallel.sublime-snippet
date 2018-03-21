@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[F.parallel({
+    ${1:key}: (callback)=>{
+
+        callback(null, data);
+    },
+    ${2:key}: (callback)=>{
+
+        callback(null, data);
+    },
+    ${3}
+},
+(err, results)=>{
+	//results {'${1:key}':{},'${2:key}':{}}
+
+});]]></content>
+	<tabTrigger>fasync.parallel</tabTrigger>
+	<scope>source.js</scope>
+	<description>async.parallel()</description>
+</snippet>

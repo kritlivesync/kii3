@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+		<title>Example</title>
+	</head>
+	<body>
+		{% if (!user) %}
+			<p>
+			<a href="/example/">Home</a> | 
+			<a href="/passport/login">Log In</a>
+			</p>
+		{% else %}
+			<p>
+			<a href="/example/">Home</a> | 
+			<a href="/passport/account">Account</a> | 
+			<a href="/passport/logout">Log Out</a>
+			</p>
+		{% } %}
+	    {% block content %} {% endblock %}
+	    {% block js %} {% endblock %}
+	</body>
+</html>

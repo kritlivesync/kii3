@@ -1,0 +1,55 @@
+{
+  "name": "kii3",
+  "description": "kii3 wrapper for express framework",
+  "version": "0.0.1",
+  "author": {
+    "name": "kritinline",
+    "email": "kritinline@gmail.com",
+    "url": ""
+  },
+  "keywords": [
+    "kii",
+    "express",
+    "expressjs",
+    "connect",
+    "framework"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "kii3": "./bin/cli.js"
+  },
+  "dependencies": {
+    "async": "*",
+    "body-parser": "*",
+    "connect-redis": "*",
+    "cookie-parser": "*",
+    "crypto": "*",
+    "dispatcherjs": "*",
+    "express": "*",
+    "express-session": "*",
+    "fs-extra": "*",
+    "helmet": "*",
+    "i18n": "*",
+    "request": "*",
+    "lodash": "*",
+    "moment": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "multer": "*",
+    "uuid": "*",
+    "nodemailer": "*",
+    "qr-image": "*",
+    "redis": "*",
+    "swig": "*",
+    "passport": "*",
+    "passport-facebook": "*",
+    "passport-google-oauth": "*",
+    "passport-linkedin": "*",
+    "passport-local": "*",
+    "passport-twitter": "*",
+    "ws": "2.3.0"
+  }
+}

@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[F.waterfall([
+    (callback) {
+        callback(null, ${1:arg});
+    },
+    (${1:arg}, callback) {
+      // arg1 now equals 'one' and arg2 now equals 'two'
+        callback(null, ${2:arg});
+    },
+    (${2:arg}, callback) {
+        // arg1 now equals 'three'
+        callback(null, ${3:arg});
+    }
+], (err, result)=>{
+    // return ${3:arg}   
+});]]></content>
+	<tabTrigger>fasync.waterfall</tabTrigger>
+	<scope>source.js</scope>
+	<description>async.waterfall()</description>
+</snippet>
+
+
+
+

@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[F.forEachSeries(${1:obj}, (${2:item}, callback)=>{ 
+    console.log(${2:item});
+    callback(); 
+}, (err)=>{
+	${3}
+});]]></content>
+	<tabTrigger>fasync.forEachSeries</tabTrigger>
+	<scope>source.js</scope>
+	<description>async.forEachSeries()</description>
+</snippet>
+
+
+
+

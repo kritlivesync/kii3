@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "async": "*",
+    "authenticate": "*",
     "body-parser": "*",
     "connect-redis": "*",
     "cookie-parser": "*",

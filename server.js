@@ -20,16 +20,16 @@ exports.init = function(config) {
     global.D = {}; //data base
     global.M = {}; //middle where
     global.S = {}; //service
-    global.R = require('kii2/init/cache.js'); //redis
-    global.F = require('kii2/init/funcs.js'); //function
+    global.R = require('kii3/init/cache.js'); //redis
+    global.F = require('kii3/init/funcs.js'); //function
 
-    require('kii2/init/models.js'); // model
-    require('kii2/init/middles.js'); // middle
-    require('kii2/init/boot.js')(app); // model
-    require('kii2/init/passport');
-    require('kii2/init/services.js'); // service
-    require('kii2/init/routes.js')(app, express); // router
-    require('kii2/init/socket.js')(server);
+    require('kii3/init/models.js'); // model
+    require('kii3/init/middles.js'); // middle
+    require('kii3/init/boot.js')(app); // model
+    require('kii3/init/passport');
+    require('kii3/init/services.js'); // service
+    require('kii3/init/routes.js')(app, express); // router
+    require('kii3/init/socket.js')(server);
 
     // start server
     

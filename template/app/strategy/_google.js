@@ -9,7 +9,7 @@ module.exports = async(passport) => {
         }, (err, user) => {
             if (err) return next(err);
             if (!user) {
-                await D._user.create({
+                D._user.create({
                     name: profile.displayName,
                     email: profile.emails[0].value,
                     username: profile.username,

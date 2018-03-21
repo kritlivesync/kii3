@@ -47,7 +47,7 @@
     "swig": "*",
     "passport": "*",
     "passport-facebook": "*",
-    "passport-google-oauth": "*",
+    "passport-google-oauth20": "*",
     "passport-linkedin": "*",
     "passport-local": "*",
     "passport-twitter": "*",

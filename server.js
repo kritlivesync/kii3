@@ -26,7 +26,7 @@ exports.init = function(config) {
     require('kii3/init/models.js'); // model
     require('kii3/init/middles.js'); // middle
     require('kii3/init/boot.js')(app); // model
-    require('kii3/init/passport');
+    require('kii3/init/passport')(app,passport);
     require('kii3/init/services.js'); // service
     require('kii3/init/routes.js')(app, express); // router
     require('kii3/init/socket.js')(server);

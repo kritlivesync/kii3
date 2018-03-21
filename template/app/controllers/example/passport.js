@@ -8,10 +8,10 @@ module.exports = async(app) => {
             res.render('example/login', { user: req.user });
         });
 
-        app.get('/passport/auth/facebook', L.passport.authenticate('facebook', { failureRedirect: '/login',scope:[ 'email', 'user_about_me']}), (req, res) => {});
-        app.get('/passport/auth/twitter', L.passport.authenticate('twitter', { failureRedirect: '/passport/login' }), (req, res) => {});
-        app.get('/passport/auth/google', L.passport.authenticate('google', { failureRedirect: '/passport/login',scope:['profile','email']}), (req, res) => {});
-        app.get('/passport/auth/linkedin', L.passport.authenticate('linkedin', { failureRedirect: '/passport/login', scope:['r_emailaddress'] }), (req, res) => {});
+        app.get('/passport/auth/facebook', L.passport.authenticate('facebook'), (req, res) => {});
+        app.get('/passport/auth/twitter', L.passport.authenticate('twitter'), (req, res) => {});
+        app.get('/passport/auth/google', L.passport.authenticate('google'), (req, res) => {});
+        app.get('/passport/auth/linkedin', L.passport.authenticate('linkedin'), (req, res) => {});
 
         app.get('/passport/auth/facebook/callback', L.passport.authenticate('facebook', { failureRedirect: '/passport/login' }), (req, res) => {
             res.redirect('/passport/login'); 

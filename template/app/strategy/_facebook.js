@@ -2,7 +2,7 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 module.exports = async(passport) => {
   if(C.auth.facebook){
     passport.use(new FacebookStrategy(C.auth.facebook, (accessToken, refreshToken, profile, next) => {
-        D._user.load({
+        D._user.findOne({
             criteria: {
                 'facebook.id': profile.id
             }

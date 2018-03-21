@@ -48,7 +48,7 @@
     "passport": "*",
     "passport-facebook": "*",
     "passport-google-oauth20": "*",
-    "passport-linkedin": "*",
+    "passport-linkedin-oauth2": "*",
     "passport-local": "*",
     "passport-twitter": "*",
     "ws": "2.3.0"

@@ -6,7 +6,7 @@ module.exports = async(passport) => {
             passwordField: 'password'
         },
         (email, password, next) => {
-            D._user.load({
+            D._user.findOne({
                 criteria: { email: email }
             }, (err, user) => {
                 if (err) return next(err);

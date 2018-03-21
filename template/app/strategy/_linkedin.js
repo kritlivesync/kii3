@@ -1,8 +1,8 @@
-const LinkedinStrategy = require('passport-linkedin').Strategy;
+const LinkedinStrategy = require('passport-linkedin-oauth2').Strategy;
 module.exports = async(passport) => {
-    if(C.auth.linkin){
-      passport.use(new LinkedinStrategy(C.auth.linkin, (accessToken, refreshToken, profile, next) => {
-          D._user.load({
+    if(C.auth.linkedin){
+      passport.use(new LinkedinStrategy(C.auth.linkedin, (accessToken, refreshToken, profile, next) => {
+          D._user.findOne({
               criteria: { 'linkedin.id': profile.id }
           }, (err, user) => {
               if (err) return next(err);

@@ -1,8 +1,8 @@
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 module.exports = async(passport) => {
   if(C.auth.google){
     passport.use(new GoogleStrategy(C.auth.google, (accessToken, refreshToken, profile, next) => {
-        D._user.load({
+        D._user.findOne({
             criteria: {
                 'google.id': profile.id
             }

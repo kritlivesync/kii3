@@ -2,7 +2,7 @@ const TwitterStrategy = require('passport-twitter').Strategy;
 module.exports = async(passport) => {
   if(C.auth.twitter){
     passport.use(new TwitterStrategy(C.auth.twitter, (accessToken, refreshToken, profile, next) => {
-        D._user.load({
+        D._user.findOne({
             criteria: { 'twitter.id_str': profile.id }
         }, (err, user) => {
             if (err) return next(err);

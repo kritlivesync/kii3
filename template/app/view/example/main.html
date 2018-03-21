@@ -42,14 +42,14 @@
       };
 
       login.onclick = () => {
-        fetch('/login', { method: 'POST', credentials: 'same-origin' })
+        fetch('/socket/login', { method: 'POST', credentials: 'same-origin' })
           .then(handleResponse)
           .then(showMessage)
           .catch((err) => showMessage(err.message));
       };
 
       logout.onclick = () => {
-        fetch('/logout', { method: 'DELETE', credentials: 'same-origin' })
+        fetch('/socket/logout', { method: 'DELETE', credentials: 'same-origin' })
           .then(handleResponse)
           .then(showMessage)
           .catch((err) => showMessage(err.message));

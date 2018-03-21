@@ -1,5 +1,5 @@
 module.exports = (Schema) => {
-    return {
+    return new Schema({
         title: { type: String, default: '', trim: true },
         body: { type: String, default: '', trim: true },
         user: { type: Schema.ObjectId, ref: 'User' },
@@ -14,5 +14,5 @@ module.exports = (Schema) => {
             files: []
         },
         createdAt: { type: Date, default: Date.now }
-    }
+    })
 }

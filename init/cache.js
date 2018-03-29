@@ -1,6 +1,10 @@
 var
     redisCli,
-    redis = require('redis');
+    redis = require('redis'),
+    bluebird = require('bluebird');
+
+bluebird.promisifyAll(redis.RedisClient.prototype);
+bluebird.promisifyAll(redis.Multi.prototype);
 
 
 Object.keys(C.dir).map((key) => {

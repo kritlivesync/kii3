@@ -2,8 +2,9 @@ const LinkedinStrategy = require('passport-linkedin-oauth2').Strategy;
 module.exports = async(passport) => {
     if(C.auth.linkedin){
       passport.use(new LinkedinStrategy(C.auth.linkedin, (accessToken, refreshToken, profile, next) => {
+          console.log('linkedin===>',profile)
           D._user.findOne({
-              criteria: { 'linkedin.id': profile.id }
+              'linkedin.id': profile.id
           }, (err, user) => {
               if (err) return next(err);
               if (!user) {

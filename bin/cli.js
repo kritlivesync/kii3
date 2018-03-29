@@ -161,6 +161,35 @@ function createApplication (name, root_path) {
   },
   "debug":false,
 }
+
+config.auth = {
+  "facebook": {
+    "clientID": process.env.FACEBOOK_CLIENTID? process.env.FACEBOOK_CLIENTID : '',
+    "clientSecret": process.env.FACEBOOK_SECRET? process.env.FACEBOOK_SECRET : '',
+    "callbackURL": config.domain.www+'/passport/auth/facebook/callback'
+  },
+  "twitter": {
+    "clientID": process.env.TWITTER_CLIENTID? process.env.TWITTER_CLIENTID : '',
+    "clientSecret": process.env.TWITTER_SECRET? process.env.TWITTER_SECRET : '',
+    "callbackURL": config.domain.www+'/passport/auth/twitter/callback'
+  },
+  "github": {
+    "clientID": process.env.GITHUB_CLIENTID? process.env.GITHUB_CLIENTID : '',
+    "clientSecret": process.env.GITHUB_SECRET? process.env.GITHUB_SECRET : '',
+    "callbackURL": config.domain.www+'/passport/auth/github/callback'
+  },
+  "linkedin": {
+    "clientID": process.env.LINKEDIN_CLIENTID? process.env.LINKEDIN_CLIENTID : '',
+    "clientSecret": process.env.LINKEDIN_CLIENTID? process.env.LINKEDIN_CLIENTID : '',
+    "callbackURL": config.domain.www+'/passport/auth/linkedin/callback'
+  },
+  "google": {
+    "clientID": process.env.LINKEDIN_CLIENTID? process.env.LINKEDIN_CLIENTID : '',
+    "clientSecret": process.env.LINKEDIN_CLIENTID? process.env.LINKEDIN_CLIENTID : '',
+    "callbackURL": config.domain.www+'/passport/auth/google/callback'
+  }
+}
+
 module.exports = config;`;
 
 

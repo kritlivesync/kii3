@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-<p>ID: {{user.id}}</p>
-<p>Name: {{user.displayName}}</p>
+<p>ID: {{user._id}}</p>
+<p>Name: {{user.name}}</p>
+<p>Provider: {{user.provider}}</p>
 {% endblock %}

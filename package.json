@@ -23,8 +23,9 @@
   },
   "dependencies": {
     "async": "*",
-    "authenticate": "*",
+    "authenticate": "^0.1.5",
     "body-parser": "*",
+    "bluebird": "*",
     "connect-redis": "*",
     "cookie-parser": "*",
     "crypto": "*",

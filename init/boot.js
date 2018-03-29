@@ -1,7 +1,6 @@
 module.exports = function(app) {
     var
         logger = require('morgan'),
-        passport = require('passport'),
         bodyParser = require('body-parser'),
         cookieParser = require('cookie-parser'),
         Session = require('express-session'),

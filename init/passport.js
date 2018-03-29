@@ -9,18 +9,21 @@ module.exports = function(app,passport) {
         })
     }
     
-    L.passport = passport;
+    if(C.auth && C.dir.strategy){
+        L.passport = passport;
 
-    app.use(passport.initialize())
-    app.use(passport.session())
+        app.use(passport.initialize())
+        app.use(passport.session())
 
-    passport.serializeUser(function(user, done) {
-      done(null, user);
-    });
+        passport.serializeUser(function(user, done) {
+          done(null, user);
+        });
 
-    passport.deserializeUser(function(obj, done) {
-      done(null, obj);
-    });
+        passport.deserializeUser(function(obj, done) {
+          done(null, obj);
+        });
 
-    eachFiles(C.dir.strategy);
+        eachFiles(C.dir.strategy);        
+    }
+
 };

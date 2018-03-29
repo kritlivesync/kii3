@@ -2,10 +2,9 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 module.exports = async(passport) => {
   if(C.auth.facebook){
     passport.use(new FacebookStrategy(C.auth.facebook, (accessToken, refreshToken, profile, next) => {
+        console.log('facebook===>',profile)
         D._user.findOne({
-            criteria: {
-                'facebook.id': profile.id
-            }
+            'facebook.id': profile.id
         }, (err, user) => {
             if (err) return next(err);
             if (!user) {

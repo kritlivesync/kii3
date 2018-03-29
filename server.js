@@ -34,6 +34,6 @@ exports.init = function(config) {
     // start server
     
     server.listen(C.port, () => {
-        console.log(`start http server ${C.domain.www} at ${C.port}`)
+        console.log(`kii3 start http server ${C.domain.www} at ${C.port}`)
     });
 }
